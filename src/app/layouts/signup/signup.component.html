@@ -1,0 +1,98 @@
+<div class="container">
+  <div class="card">
+    <h2 class="text-center">Sign Up</h2>
+    <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+      <div class="form-control">
+        <label for="firstName">First Name</label>
+        <input type="text" formControlName="firstName" name="firstName" />
+        <small
+          class="error p-0 m-0"
+          *ngIf="
+            signUpForm.controls.firstName?.touched &&
+            signUpForm.controls.firstName?.errors
+          "
+          >First Name is required.</small
+        >
+      </div>
+
+      <div class="form-control">
+        <label class="lable" for="lastName">Last Name</label>
+        <input type="text" formControlName="lastName" name="lastName" />
+        <small
+          class="error p-0 m-0"
+          *ngIf="
+            signUpForm.controls.lastName?.touched &&
+            signUpForm.controls.lastName?.errors
+          "
+          >Last Name is required.</small
+        >
+      </div>
+
+      <div class="form-control">
+        <label class="lable" for="Email">Email</label>
+        <input
+          type="text"
+          formControlName="email"
+          name="Email"
+        />
+        <small
+          class="error p-0 m-0"
+          *ngIf="
+            signUpForm.controls.email?.touched &&
+            signUpForm.controls.email?.errors?.required
+          "
+          >Email is required.</small
+        >
+        <small
+          class="error p-0 m-0"
+          *ngIf="
+            signUpForm.controls.email?.touched &&
+            signUpForm.controls.email?.errors?.email
+          "
+          >Enter Valid Email.</small
+        >
+      </div>
+
+      <div class="form-control">
+        <label class="lable" for="username">Username</label>
+        <input type="text" formControlName="username" name="username" />
+        <small
+          class="error p-0 m-0"
+          *ngIf="
+            signUpForm.controls.username?.touched &&
+            signUpForm.controls.username?.errors
+          "
+          >Username is required.</small
+        >
+      </div>
+
+      <div class="form-control">
+        <label class="lable" for="password1">Type your password</label>
+        <input type="password" formControlName="passwordOne" name="password1" />
+        <small
+          class="error p-0 m-0"
+          *ngIf="
+            signUpForm.controls.passwordOne?.touched &&
+            signUpForm.controls.passwordOne?.errors
+          "
+          >Password is required.</small
+        >
+      </div>
+
+      <div class="form-control">
+        <label class="lable" for="password2">Type your password again</label>
+        <input type="password" formControlName="passwordTwo" name="password2" />
+        <small
+          class="error p-0 m-0"
+          *ngIf="
+            signUpForm.controls.passwordTwo?.touched &&
+            signUpForm.controls.passwordTwo?.errors
+          "
+          >Re-Enter password is required.</small
+        >
+      </div>
+
+      <button class="btn btn-primary" type="submit">Sign Up</button>
+    </form>
+  </div>
+</div>

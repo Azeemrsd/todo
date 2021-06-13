@@ -1,0 +1,16 @@
+<div class="grid-2 card" *ngFor="let todo of allTodos;let i=index">
+    <div>
+        <h3 [ngClass]="{'completed':todo.isCompleted}">{{todo.todo}}</h3>
+        <span>
+            {{todo.date}}
+        </span>
+    </div>
+    <div style="text-align:right">
+        <i class="fa fa-edit px-1" aria-hidden="true" (click)="edit(i)"></i>
+        <i class="fa fa-check px-1" aria-hidden="true" (click)="complete(i)"></i>
+        <i class="fa fa-trash px-1" (click)="delete(i)"></i>
+    </div>
+</div>
+<div *ngIf="allTodos?.length === 0">
+    <h3 class="text-center">No todos yet.</h3>
+</div>

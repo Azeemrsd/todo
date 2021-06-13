@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="card">
+    <h2 class="text-center">Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <div class="form-builder">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" name="username" id="" />
+        <small
+        class="error p-0 m-0"
+        *ngIf="
+          loginForm.controls.username?.touched &&
+          loginForm.controls.username?.errors
+        "
+        >Password is required.</small
+      >
+      </div>
+      <div class="form-control">
+        <label for="password1">Type your password</label>
+        <input type="password" formControlName="password" name="password1" id="" />
+        <small
+        class="error p-0 m-0"
+        *ngIf="
+          loginForm.controls.password?.touched &&
+          loginForm.controls.password?.errors
+        "
+        >Password is required.</small
+      >
+      </div>
+      <button type="submit" class="text-center btn btn-primary">Login</button>
+      <span
+        >Don't have an account?<a routerLink="/register">Sign Up here</a></span
+      >
+    </form>
+  </div>
+</div>

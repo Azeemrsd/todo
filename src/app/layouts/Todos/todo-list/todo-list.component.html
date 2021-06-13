@@ -1,0 +1,11 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div>
+        <form [formGroup]="todoForm" (ngSubmit)="postTodo()">
+            <textarea name="todo"  id="" formControlName="todo" cols="30" rows="10"></textarea>
+            <button *ngIf="!updateMode" class="btn btn-success text-right" type="submit">Add Todo</button>
+            <button *ngIf="updateMode" class="btn btn-success text-right" type="button" (click)="performUpdate()">Update Todo</button>
+        </form>
+    </div>
+   <app-todo [allTodos]="allTodos" (updateTodo)="updateTodo($event)"></app-todo>
+</div>
